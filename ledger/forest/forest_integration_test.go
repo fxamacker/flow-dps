@@ -62,9 +62,9 @@ func TestForest_InsertAndReadBatches(t *testing.T) {
 	refTr := refTrie.NewEmptyMTrie()
 
 	require.Equal(t, refTr.RootHash(), tr.RootHash())
-	
+
 	trRootHash := tr.RootHash()
-	
+
 	// Insert ledger values by batches and add the resulting tries to the forest.
 	for i := batchSize; i < len(paths); i += batchSize {
 		startIdx := i - batchSize
@@ -83,7 +83,7 @@ func TestForest_InsertAndReadBatches(t *testing.T) {
 		// Verify that the orignial trie is unmodified.
 		require.Equal(t, refTr.RootHash(), tr.RootHash())
 		require.Equal(t, trRootHash, tr.RootHash())
-		
+
 		hash := tr.RootHash()
 		parentCommit, err := flow.ToStateCommitment(hash[:])
 		require.NoError(t, err)
