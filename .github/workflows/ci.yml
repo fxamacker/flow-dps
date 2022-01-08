@@ -96,8 +96,8 @@ jobs:
 
       # This check runs all unit tests with verbose output and ensures that all
       # of the tests pass successfully.
-      - name: Verify unit tests
-        run: go test -tags relic -v ./...
+      # - name: Verify unit tests
+      #   run: go test -tags relic -v ./...
 
       # This check runs all integration tests with verbose output and ensures
       # that they pass successfully.
