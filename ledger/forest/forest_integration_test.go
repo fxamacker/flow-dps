@@ -63,7 +63,7 @@ func TestForest_InsertAndReadBatches(t *testing.T) {
 
 	require.Equal(t, refTr.RootHash(), tr.RootHash())
 	
-	trRootHash = tr.RootHash()
+	trRootHash := tr.RootHash()
 	
 	// Insert ledger values by batches and add the resulting tries to the forest.
 	for i := batchSize; i < len(paths); i += batchSize {
